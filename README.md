@@ -25,7 +25,9 @@ shtempelyuk.2018@skola.ssps.cz
   - Softwarová rozhraní
     - Windows Presentation Foundation
 - Vlastnosti systému
-  - i: volba času, kdy výuka začíná, informace o délce hodin a přestavkách dohromady
+  - i: funkce zadávání rozvrhu, kterou si každý uživatel může nastavit sám
+  - i: funkce použítí programu i na obyčejný timer
+  - i: program využívá aktuální čas na počítačí k zprovoznění svých funkcí
   - akce: program zjistí kdy začínájí hodiny tento den  
   - výstup: informace a zvukový signál o tom, že hodina začala nebo začne s předstihem v pár minut 
   - vstup: zmačknutí tlačítka, které vypne zvukový signal 

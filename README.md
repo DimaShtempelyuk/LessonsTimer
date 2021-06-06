@@ -50,7 +50,7 @@ shtempelyuk.2018@skola.ssps.cz
         -	nejsou
 -	Scénáře  
     -	Všechny reálné způsoby použití
-        -	Použití pro žáky, kteří se chtějí vzdělávat, ale chybí jim disciplína na to, aby to zvládali sami, hlídání si hodíš a času.
+        -	Použití pro žáky, kteří se chtějí vzdělávat, ale chybí jim disciplína na to, aby to zvládali sami, hlídání online hodin a času.
     -	Typy uživatelských rolí, „personas“
         -	Student - chce si hlídat online výuku, a nemít potíže s tím, v kolik mu začíná hodina, a jestli jí vůbec má.
         -	Běžný uživatel - potřebuje si nastavit časovač z osobních důvodů (např. Ví, že potřebuje vyrazit do práce za hodinu, a chce si nastavit časovač tak, aby si nemusel každých 5 minut kontolovat hodinky, nebo mobil).  
@@ -62,7 +62,7 @@ shtempelyuk.2018@skola.ssps.cz
         -	Bezpečnost se nebude brát v potaz, neplánuji klást důraz na designovou stránku aplikace, jednoduchost a funkčnost jsou našimi hlavními principy.
 -	Celková hrubá architektura
     -	Pracovní tok
-        - Uživatl spustí aplikaci
+        - Uživatel spustí aplikaci.
         - Rozhodne se, jestli chce použivat aplikaci jenom na	timer nebo i na školu
         - Pokud chce používat aplikaci na rozvrh hodin do školy, bude muset jednou při prvním spuštění zadat svůj rozvrh hodin.
         - Rozvrh hodin se bude zadávat srozumitelně pro běžného studenta, bude mu ten interface jasný.
@@ -71,10 +71,34 @@ shtempelyuk.2018@skola.ssps.cz
         - také bude existovat tlačítko, kterým se uživatel, snadno přepne na timer a bude schopný si nastavit časovač na čas, který potřebuje.
         - Timer a Školní modul, budou vydávat různé zvuky, aby to nematlo uživatele.
     -	Hlavní moduly
-        -	Modul „Online School“ 
-        -	Modul "Timer" 
+        -	Modul „Online Výuka“ 
+        -	Modul "Časovač" 
     -	Všechny detaily: obrazovky, okna, tisky, chybové zprávy, logování
-        - 	 
+           
+        - 	Okno "Online výuka"
+            - Vlevo rozvrh hodin na dnešek
+            - Vpravo dvě tlačítka, jedno slouží k úpravě nebo vytvoření rozvrhu, druhé pro přechod na "Časovač".
+            - Chybové hlášení při zpuštění časovaače na 0 sekund.
+            - Uprostřed dole, v koli začíná neblizší hodina, pod tím ta další.
+        -   Okno "Časovač"
+            - Vpravo nahoře tlačítko pro přechod do modulu "Online výuka".
+            - Uprostřed label s časem, který se upravuje tlačítky "+" a "-". 
+            - Tlačítko "cancel", které zruší spuštěný nebo pozastavený časovač.
+            - Tlačítko "start/pause", spustí časovač nebo ho pozastaví, vydá chybové hlášení při pokusu o spuštění časovače na 0 sekund.
+        -   Okno "Rozvrh"
+            - Je součástí modulu "Online výuka"
+            - Vlevo první sloupec s labely "1.- 7. hodina".
+            - Vpravo za labely TextBoxy pro zapsání názvu hodiny.
+            - Uprostřed druhý sloupec s labely "začína v".
+            - ComboBox pro zvolení dne v týdnu, pro který rozvrh upravujete nebo vytváříte.
+            - Tlačítko vlevo dole "Obnovit/Vytvořit", které obnoví nebo vytvoří nový rozvrh.
+            - Rozvrh se uloží to txt souboru, ze kterého se pak bude načítat do modulu "Online výuka".
+            - Tlačítko vpravo dole "Cancel", zruší vyplnění formuláře.
+         - Chybová hlášení
+            - Pouze možnost "ok" pro odkliknití.
+            - První chybové hlášení vyskočí při zadání 0 do časovače. Druhé při zadání špatného formátu času do rozvrhu.
+            - Chybová hlašení, poradí uživateli, jak má chybu spravit.
     -	Všechny dohodnuté principy
         -	Timer
         -	Funkce pro hlídání školních online hodin
+    - Vzhled viz REPOSITORY

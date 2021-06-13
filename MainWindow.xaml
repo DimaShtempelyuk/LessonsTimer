@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LessonsTimerRealOne"
+        xmlns:ControlLib="clr-namespace:ControlLib;assembly=NumericUpDown" x:Class="LessonsTimerRealOne.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <ControlLib:NumericUpDown MaxValue="24" Value="0" MinValue="0" x:Name ="UpDHr" HorizontalAlignment="Left" Margin="269,152,0,0" VerticalAlignment="Top" Width="60" Height="40" FontSize="18"/>
+        <ControlLib:NumericUpDown MaxValue="59" Value="0" MinValue="0" x:Name ="UpDMin" HorizontalAlignment="Left" Margin="352,152,0,0" VerticalAlignment="Top" Width="60" Height="40" FontSize="18"/>
+        <ControlLib:NumericUpDown MaxValue="59" Value="0" MinValue="0" x:Name ="UpDSec" HorizontalAlignment="Left" Margin="442,152,0,0" VerticalAlignment="Top" Width="60" Height="40" FontSize="18"/>
+        <Button Click="StaB_Click" Name="StaB" Content="Start" HorizontalAlignment="Left" Margin="337,242,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="HrL" Content="" HorizontalAlignment="Left" Margin="269,152,0,0" VerticalAlignment="Top" Height="40" Width="39" FontSize="18"/>
+        <Label x:Name="MinL" Content="" HorizontalAlignment="Left" Margin="352,152,0,0" VerticalAlignment="Top" Height="40" Width="40" FontSize="18"/>
+        <Label x:Name="SecL" Content="" HorizontalAlignment="Left" Margin="442,152,0,0" VerticalAlignment="Top" Height="40" Width="40" FontSize="18"/>
+        <Button Click="Button_Click_1" Name="StoB" Content="Stop" HorizontalAlignment="Left" Margin="299,242,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Click="PauseB_Click" Name="PauseB" Content="Pause" HorizontalAlignment="Left" Margin="375,242,0,0" VerticalAlignment="Top" Width="74"/>
+
+    </Grid>
+</Window>

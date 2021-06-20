@@ -8,16 +8,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
         <ControlLib:NumericUpDown MaxValue="24" Value="0" MinValue="0" x:Name ="UpDHr" HorizontalAlignment="Left" Margin="269,152,0,0" VerticalAlignment="Top" Width="60" Height="40" FontSize="18"/>
-        <ControlLib:NumericUpDown MaxValue="59" Value="0" MinValue="0" x:Name ="UpDMin" HorizontalAlignment="Left" Margin="352,152,0,0" VerticalAlignment="Top" Width="60" Height="40" FontSize="18"/>
-        <ControlLib:NumericUpDown MaxValue="59" Value="0" MinValue="0" x:Name ="UpDSec" HorizontalAlignment="Left" Margin="442,152,0,0" VerticalAlignment="Top" Width="60" Height="40" FontSize="18"/>
+        <ControlLib:NumericUpDown MaxValue="59" Value="0" MinValue="0" x:Name ="UpDMin" HorizontalAlignment="Left" Margin="361,152,0,0" VerticalAlignment="Top" Width="60" Height="40" FontSize="18"/>
+        <ControlLib:NumericUpDown MaxValue="59" Value="0" MinValue="0" x:Name ="UpDSec" HorizontalAlignment="Left" Margin="452,152,0,0" VerticalAlignment="Top" Width="60" Height="40" FontSize="18"/>
         <Button Click="StaB_Click" Name="StaB" Content="Start" HorizontalAlignment="Left" Margin="337,242,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="HrL" Content="" HorizontalAlignment="Left" Margin="269,152,0,0" VerticalAlignment="Top" Height="40" Width="39" FontSize="18"/>
-        <Label x:Name="MinL" Content="" HorizontalAlignment="Left" Margin="352,152,0,0" VerticalAlignment="Top" Height="40" Width="40" FontSize="18"/>
-        <Label x:Name="SecL" Content="" HorizontalAlignment="Left" Margin="442,152,0,0" VerticalAlignment="Top" Height="40" Width="40" FontSize="18"/>
+        <Label x:Name="MinL" Content="" HorizontalAlignment="Left" Margin="361,152,0,0" VerticalAlignment="Top" Height="40" Width="40" FontSize="18"/>
+        <Label x:Name="SecL" Content="" HorizontalAlignment="Left" Margin="452,152,0,0" VerticalAlignment="Top" Height="40" Width="40" FontSize="18"/>
         <Button Click="Button_Click_1" Name="StoB" Content="Stop" HorizontalAlignment="Left" Margin="299,242,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Click="PauseB_Click" Name="PauseB" Content="Pause" HorizontalAlignment="Left" Margin="375,242,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button Click="PauseB_Click" Name="PauseB" Content="Pause" HorizontalAlignment="Left" Margin="375,242,0,0" VerticalAlignment="Top" Width="74" Background="#FFF30000"/>
+        <Button Click="ResumeB_Click" x:Name="ResumeB" Content="Resume" HorizontalAlignment="Left" Margin="375,242,0,0" VerticalAlignment="Top" Width="74" Background="#FF51FF00"/>
+        <Button Click="LWShow_Click" Content="Přejít na Online výuku, dodělává se (komplikovanější než jsem očekával)" Name="LWShow" HorizontalAlignment="Left" Margin="50,29,0,0" VerticalAlignment="Top" Width="691" Height="54"/>
+        <Label Content="hours" HorizontalAlignment="Left" Margin="210,161,0,0" VerticalAlignment="Top" Height="31" Width="40"/>
+        <Label Content="min" HorizontalAlignment="Left" Margin="329,161,0,0" VerticalAlignment="Top" Height="31" Width="40"/>
+        <Label Content="sec" HorizontalAlignment="Left" Margin="421,161,0,0" VerticalAlignment="Top" Height="31" Width="40"/>
 
     </Grid>
 </Window>

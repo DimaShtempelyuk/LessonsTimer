@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Timers;
+using System.Media;
+
 
 using System.Windows.Threading;
 
@@ -23,18 +25,18 @@ namespace LessonsTimerRealOne
     /// </summary>
     public partial class MainWindow : Window
     {
+        // SoundPlayer player = new SoundPlayer(@"F:\rabochiy stol\Dima\Škola\3. rocnik\PVA\LessonsTimerRealOne\obj\TimerSound.wav");
+        SoundPlayer player = new SoundPlayer(LessonsTimerRealOne.Properties.Resources.TimerSound);
         DispatcherTimer t;
         double BaseHr;
         double BaseMin;
         double BaseSec;
-        double PauseHr;
-        double PauseMin;
-        double PauseSec;
-        public MainWindow()
+        public MainWindow() 
         {
             InitializeComponent();
             StoB.Visibility = Visibility.Hidden;
             PauseB.Visibility = Visibility.Hidden;
+            ResumeB.Visibility = Visibility.Hidden;
         }
             
         private void StaB_Click(object sender, RoutedEventArgs e)
@@ -46,7 +48,7 @@ namespace LessonsTimerRealOne
             BaseHr = incrHr;
             BaseMin = incrMin;
             BaseSec = incrSec;
-
+            
             t = new DispatcherTimer();
             HrL.Content = incrHr;
             MinL.Content = incrMin;
@@ -56,7 +58,6 @@ namespace LessonsTimerRealOne
             t.Start();
             VisibilityBut(false);
         }
-
         private void t_Tick(object sender, EventArgs e)
         {
             double incrHr = UpDHr.Value;
@@ -68,9 +69,12 @@ namespace LessonsTimerRealOne
                 {
                     if (incrHr == 0)
                     {
-                        MessageBoxResult dr = MessageBox.Show("Sure", "Get This Bag", MessageBoxButton.YesNo);
+                        player.Load();
+                        player.PlayLooping();
+                        MessageBoxResult dr = MessageBox.Show("Yes - Stop, No - Repeat", "Timer!!!", MessageBoxButton.YesNo);
                         if (dr == MessageBoxResult.Yes)
                         {
+                            player.Stop();
                             t.Stop();
                             UpDHr.Value = BaseHr;
                             UpDMin.Value = BaseMin;
@@ -79,6 +83,7 @@ namespace LessonsTimerRealOne
                         }
                         else if (dr == MessageBoxResult.No)
                         {
+                            player.Stop();
                             t.Stop();
                             UpDHr.Value = BaseHr;
                             UpDMin.Value = BaseMin;
@@ -88,6 +93,7 @@ namespace LessonsTimerRealOne
                             SecL.Content = UpDSec.Value;
                             t.Start();    //do something else
                         }
+
                     }
                     else
                     {
@@ -135,9 +141,10 @@ namespace LessonsTimerRealOne
 
         private void PauseB_Click(object sender, RoutedEventArgs e)
         {
-            
             t.Stop();
-            VisibilityBut(true);
+            VisibilityBut(false);
+            PauseB.Visibility = Visibility.Hidden;
+            ResumeB.Visibility = Visibility.Visible;
         }
         private void VisibilityBut(bool x)
         {
@@ -152,6 +159,7 @@ namespace LessonsTimerRealOne
                 StaB.Visibility = Visibility.Visible;
                 StoB.Visibility = Visibility.Hidden;
                 PauseB.Visibility = Visibility.Hidden;
+                ResumeB.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -161,7 +169,23 @@ namespace LessonsTimerRealOne
                 StaB.Visibility = Visibility.Hidden;
                 StoB.Visibility = Visibility.Visible;
                 PauseB.Visibility = Visibility.Visible;
+                ResumeB.Visibility = Visibility.Hidden;
             }
+        }
+
+        private void ResumeB_Click(object sender, RoutedEventArgs e)
+        {
+            t.Start();
+            PauseB.Visibility = Visibility.Visible;
+            ResumeB.Visibility = Visibility.Hidden;
+
+        }
+
+        private void LWShow_Click(object sender, RoutedEventArgs e)
+        {
+            LessonsWindow lw = new LessonsWindow();
+            lw.Owner = this;
+            lw.ShowDialog();
         }
     }
 }
